@@ -1,0 +1,397 @@
+@import 'grid';
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+$timing: .25s;
+
+$color-blue: rgb(46, 117, 181);
+$color-orange: rgb(249, 136, 5);
+
+.case-studies {
+
+  &__container {
+    max-width: 1120px;
+  }
+
+  &__h1 {
+    font-size: 32px;
+    font-family: "Roboto";
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    line-height: 1.125;
+
+    margin: 0 0 30px 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+    }
+  }
+
+  &__p {
+    font-size: 15px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    line-height: 1.444;
+    margin: 30px 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  &__card,
+  &__banner {
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 992px) {
+      height: 440px;
+    }
+  }
+}
+
+.cs-card,
+.cs-banner {
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.cs-card {
+  border-color: #f2f2f2;
+
+  &:hover {
+
+    .cs-card__position {
+      color: $color-blue;
+    }
+
+    .cs-card__more {
+      background: $color-blue;
+
+      span {
+        color: #fff;
+      }
+
+      &-arrow {
+        fill: #fff;
+      }
+    }
+
+    .cs-card__top-photo {
+      &::before {
+        background: rgba(0,0,0,.25);
+      }
+    }
+  }
+
+  &__top-photo {
+    position: relative;
+    display: block;
+    padding-bottom: 50%;
+
+    background-position: center;
+    background-size: cover;
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background: rgba(0,0,0,0);
+      z-index: 1;
+
+      transition: background $timing;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    padding: 20px;
+  }
+
+  &__department {
+    font-size: 14px;
+    font-family: "Roboto";
+    color: $color-blue;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__position {
+    font-size: 24px;
+    font-family: "Roboto";
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    line-height: 1.111;
+    margin: 0 0 20px 0;
+
+    transition: color $timing, font-size $timing;
+
+    @media screen and (min-width: 768px) {
+      font-size: 32px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 36px;
+    }
+  }
+
+  &__description {
+    font-size: 15px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+  }
+
+  &__more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+
+    padding: 20px;
+    border-top: 1px solid #f2f2f2;
+    transition: background $timing;
+
+    span {
+      font-size: 15px;
+      font-family: "Roboto";
+      font-weight: 300;
+      color: rgb(168, 177, 180);
+      line-height: 1.6;
+
+      transition: color $timing;
+    }
+
+    &-arrow {
+      display: block;
+      fill: #a8b1b4;
+
+      transition: fill $timing;
+    }
+  }
+}
+
+.cs-banner {
+  padding: 50px 30px;
+  text-align: center;
+
+  justify-content: space-between;
+
+  transition: background $timing;
+
+  &:hover {
+
+    .cs-banner__link {
+      svg {
+        left: 5px;
+      }
+    }
+  }
+
+  &_blue {
+    background: $color-blue;
+    border-color: $color-blue;
+
+    &:hover {
+      background: darken($color-blue, 5%);
+    }
+  }
+
+  &_orange {
+    background: $color-orange;
+    border-color: $color-orange;
+
+    &:hover {
+      background: darken($color-orange, 3%);
+    }
+  }
+
+  &__middle {
+    margin: 25px 0;
+  }
+
+  &__quote {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.778;
+
+    span {
+      &::before,
+      &::after {
+        content: '"';
+      }
+    }
+
+    &-icon {
+      fill: rgba(255,255,255,.3);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: block;
+      font-size: 15px;
+      font-family: "Roboto";
+      font-weight: 100;
+      color: rgba(255,255,255,.6);
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+
+    svg {
+      position: relative;
+      display: block;
+      left: 0;
+
+      transition: left $timing;
+    }
+
+    &-arrow {
+      fill: rgba(255,255,255,.6);
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-family: "Roboto";
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  &__text {
+    display: block;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.778;
+  }
+
+  &__phone {
+    display: block;
+    font-size: 36px;
+    font-family: "Roboto";
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.2;
+
+    margin: 20px 0;
+  }
+}
+
+.cs-testimotial {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  background-image: url('http://cerius-wp.darwinapps.com/wp-content/uploads/2015/06/Home-Screen_1276x375.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  padding: 40px 0;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 0;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,.6);
+    transition: background $timing;
+
+    @media screen and (min-width: 992px) {
+      background: rgba(255,255,255,.2);
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-right: 40px;
+    z-index: 1;
+
+
+    @media screen and (min-width: 768px) {
+      width: 440px;
+      margin-left: auto;
+      margin-right: 30px;
+    }
+  }
+
+  &__quote {
+    position: relative;
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    font-size: 16px;
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+
+    &-icon {
+      position: absolute;
+      left: -40px;
+      top: 0;
+
+      width: 27px;
+      height: 20px;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+
+  &__author {
+    margin-bottom: 15px;
+
+    &-text {
+      display: block;
+      font-size: 15px;
+      font-family: "Roboto";
+      font-weight: 400;
+    }
+  }
+}
