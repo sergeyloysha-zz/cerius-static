@@ -7,6 +7,8 @@ $color-blue: rgb(46, 117, 181);
 $color-orange: rgb(249, 136, 5);
 
 .case-studies {
+  overflow: hidden;
+  padding: 40px 0 0 0;
 
   &__container {
     max-width: 1120px;
@@ -36,6 +38,122 @@ $color-orange: rgb(249, 136, 5);
 
     @media screen and (min-width: 768px) {
       font-size: 18px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__position {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 400;
+    line-height: 20px;
+    color: $color-blue;
+  }
+
+  &__controls {
+    margin-left: auto;
+  }
+
+  &__effects {
+    margin: 50px 0;
+  }
+
+  &__section {
+    margin: 30px 0;
+
+    @media screen and (min-width: 768px) {
+      margin: 70px 0;
+    }
+
+    &_large {
+      margin: 30px 0;
+
+      @media screen and (min-width: 992px) {
+        margin: 120px 0;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    position: relative;
+    background: #f7f7f7;
+    padding: 40px 0;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    flex-direction: column;
+
+    @media screen and (min-width: 992px) {
+      flex-direction: row;
+    }
+
+    &::before,
+    &::after {
+      content: ' ';
+      position: absolute;
+      background: #f7f7f7;
+      top: 0;
+      bottom: 0;
+
+      width: 100%;
+    }
+
+    &::before {
+      left: -100%;
+    }
+
+    &::after {
+      right: -100%;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @media screen and (min-width: 992px) {
+      width: 50%;
+    }
+  }
+
+  &__load-more {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  &__photo {
+    display: none;
+    position: relative;
+    max-width: 420px;
+    height: 100%;
+    margin-left: auto;
+
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
+
+    &-src {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 420px;
+      padding-bottom: 100%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      border-radius: 5px;
+      overflow: hidden;
     }
   }
 
@@ -393,5 +511,304 @@ $color-orange: rgb(249, 136, 5);
       font-family: "Roboto";
       font-weight: 400;
     }
+  }
+}
+
+.cs-controls {
+  display: flex;
+  align-items: center;
+
+  &__control {
+    display: block;
+    opacity: 1;
+    transition: opacity $timing;
+
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(168, 177, 180);
+    line-height: 20px;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 16px;
+    background: rgb(168, 177, 180);
+    margin: 0 10px;
+  }
+
+  &__arrow {
+    fill: rgb(168, 177, 180);
+  }
+}
+
+.cs-effects {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 40px;
+}
+
+.cs-effect {
+  text-align: center;
+  padding: 0 0 40px 0;
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-bottom: 20px;
+
+    &-text {
+      font-size: 30px;
+      font-family: "Roboto";
+      font-weight: 300;
+      color: rgb(0, 0, 0);
+      line-height: 0.667;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    background: $color-blue;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px $color-blue;
+
+    &_up {
+      .cs-effect__arrow {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &_down {
+      background: #f05f3d;
+      box-shadow: 0 0 0 1px #f05f3d;
+      .cs-effect__arrow {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__percentage {
+    font-size: 42px;
+    line-height: 50px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-family: "Roboto";
+    color: rgb(0, 0, 0);
+    line-height: 1.222;
+  }
+}
+
+.cs-list {
+  margin-top: 30px;
+
+  &_nt {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 992px) {
+    margin: 0;
+  }
+
+  & + & {
+    margin-top: 15px;
+  }
+
+  dt {
+    font-size: 28px;
+    font-family: "Roboto";
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  dd {
+    position: relative;
+    font-size: 15px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(0,0,0);
+    line-height: 2;
+    margin: 0;
+    padding-left: 30px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: $color-blue;
+      border-radius: 50%;
+    }
+  }
+}
+
+.cs-extra {
+  padding: 50px 60px;
+  background: $color-blue;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 auto 30px auto;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 420px;
+  }
+
+
+  @media screen and (min-width: 992px) {
+    margin: 0 30px 30px 0;
+    box-shadow: 30px 30px 0 rgba(0,0,0,.1);
+  }
+
+  &_reverse {
+    background: rgba(0,0,0,.1);
+    padding: 0;
+
+    @media screen and (min-width: 992px) {
+      box-shadow: 30px 30px 0 $color-blue;
+    }
+  }
+
+  &__media {
+    display: block;
+    width: 100%;
+    padding-bottom: 40%;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media screen and (min-width: 768px) {
+      padding-bottom: 80%;
+    }
+  }
+
+  &__quote {
+    opacity: .3;
+  }
+
+  &__text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: "Roboto";
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+  }
+}
+
+.cs-results {
+  width: 100%;
+  padding: 50px 15px;
+
+  border-radius: 5px;
+
+  background: url('../images/results-background.jpg') center no-repeat;
+  background-size: cover;
+  text-align: center;
+
+  &__h1 {
+    font-size: 32px;
+    font-family: "Roboto";
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    line-height: 1.125;
+    margin: 0 0 30px 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    line-height: 1.4;
+    margin: 20px 0;
+
+    display: flex;
+    align-items: top;
+    justify-content: center;
+
+    svg {
+      position: relative;
+      top: 3px;
+      display: block;
+      margin-right: 10px;
+
+      @media screen and (min-width: 768px) {
+        top: 6px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.cs-load-more {
+  display: block;
+
+  span {
+    display: block;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 300;
+    color: rgb(46, 117, 181);
+    line-height: 20px;
   }
 }
