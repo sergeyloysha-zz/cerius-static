@@ -829,6 +829,9 @@ hr {
 .affix {
   position: fixed; }
 
+q::before, q::after {
+  content: '"'; }
+
 .case-studies {
   overflow: hidden;
   padding: 40px 0 0 0; }
@@ -1243,20 +1246,9 @@ hr {
         flex-shrink: 0;
     margin-right: 10px;
     width: 40px;
-    height: 40px;
-    background: #2e75b5;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px #2e75b5; }
-    .cs-effect__icon_up .cs-effect__arrow {
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
-    .cs-effect__icon_down {
-      background: #f05f3d;
-      box-shadow: 0 0 0 1px #f05f3d; }
-      .cs-effect__icon_down .cs-effect__arrow {
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg); }
+    height: 40px; }
+    .cs-effect__icon img {
+      display: block; }
   .cs-effect__percentage {
     font-size: 42px;
     line-height: 50px;

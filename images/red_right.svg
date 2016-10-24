@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>red_right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="1" y="1" width="38" height="38" rx="19"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="38" height="38" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="red_right" transform="translate(20.000000, 20.000000) rotate(-90.000000) translate(-20.000000, -20.000000) ">
+            <g id="Group" transform="translate(0.000000, 0.000000)">
+                <rect id="Rectangle" fill="#F05F3D" x="0" y="0" width="40" height="40" rx="20"></rect>
+                <use id="Rectangle" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="3" xlink:href="#path-1"></use>
+            </g>
+            <text id="ion-ios-arrow-thin-down---Ionicons" font-family="Ionicons" font-size="25" font-weight="400" fill="#FFFFFF">
+                <tspan x="15" y="30"></tspan>
+            </text>
+        </g>
+    </g>
+</svg>
