@@ -6,6 +6,13 @@ $timing: .25s;
 $color-blue: rgb(46, 117, 181);
 $color-orange: rgb(249, 136, 5);
 
+q {
+  &::before,
+  &::after {
+    content: '"';
+  }
+}
+
 .case-studies {
   overflow: hidden;
   padding: 40px 0 0 0;
@@ -591,23 +598,8 @@ $color-orange: rgb(249, 136, 5);
     width: 40px;
     height: 40px;
 
-    background: $color-blue;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px $color-blue;
-
-    &_up {
-      .cs-effect__arrow {
-        transform: rotate(-90deg);
-      }
-    }
-
-    &_down {
-      background: #f05f3d;
-      box-shadow: 0 0 0 1px #f05f3d;
-      .cs-effect__arrow {
-        transform: rotate(90deg);
-      }
+    img {
+      display: block;
     }
   }
 
