@@ -889,7 +889,9 @@ q::before, q::after {
     @media screen and (min-width: 992px) {
       .case-studies__effects {
         -ms-flex-direction: row;
-            flex-direction: row; } }
+            flex-direction: row;
+        -ms-flex-align: start;
+            align-items: flex-start; } }
   .case-studies__section {
     margin: 30px 0; }
     @media screen and (min-width: 768px) {
